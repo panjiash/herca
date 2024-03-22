@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "86e89dc0-cd55-43df-a2c5-b1129d876c84",
+		"name": "Herca_Tes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7497532"
+	},
+	"item": [
+		{
+			"name": "getKomisi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/komisi",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"komisi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postKomisi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"marketingId\": 1,\r\n  \"bulan\": \"2023-05\",\r\n  \"pay\": 300000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/komisi",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"komisi"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

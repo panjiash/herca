@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:@127.0.0.1:3306/herca_tes"
+}
+
+model Marketing {
+  id         Int          @id @default(autoincrement())
+  name       String       @db.VarChar(100)
+  penjualan  Penjualan[]
+  pembayaran Pembayaran[]
+
+  @@map("marketing")
+}
+
+model Penjualan {
+  id                 Int        @id @default(autoincrement())
+  transaction_number String     @db.VarChar(255)
+  Marketing          Marketing? @relation(fields: [marketing_id], references: [id])
+  marketing_id       Int?
+  date               DateTime?  @db.Date
+  cargo_fee          Float?
+  total_balance      Float?
+  grand_total        Float?
+
+  @@map("penjualan")
+}
+
+model Pembayaran {
+  id           String     @id @default(uuid())
+  date         DateTime?
+  Marketing    Marketing? @relation(fields: [marketing_id], references: [id])
+  marketing_id Int?
+  bulan        String     @db.VarChar(255)
+  pay          Float
+
+  @@map("pembayaran")
+}
