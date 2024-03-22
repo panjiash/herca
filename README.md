@@ -15,6 +15,8 @@ Aplikasi ini dibangun untuk membantu dalam menghitung dan mengelola pembayaran k
 - **Database**: MySQL
 - **Lainnya**: Axios (untuk komunikasi antara frontend dan backend)
 
+## Cara menggunakan
+
 #### 1. Clone Repository
 
 ```
